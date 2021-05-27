@@ -1,0 +1,39 @@
+;
+; FirstDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+;驱动程序类别
+Class=iTest Drivers
+;指明设备类的GUID，其格式为：{nnnnnnnn-nnnn-nnnn-nnnnnnnnnnnn}
+ClassGuid={44C962BC-6CCD-491F-B481-ADA40E5F32CD}
+;指明该INF文件的供应商
+Provider=hero
+;指明驱动程序的版本信息，其格式为：mm/dd/yyyy[,x.y.v.z]
+DriverVer=
+;指明数字签名文件的文件名，其扩展名为.cat
+CatalogFile=firstdriver.cat
+
+;DestinationDirs节指明INF文件和设备驱动程序的目标目录
+[DestinationDirs]
+DefaultDestDir = 12
+
+;SourceDiskNames节指明设备驱动程序所在的磁盘或CD-ROM
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+;SourceDiskFiles节指明设备驱动程序的文件名
+[SourceDisksFiles]
+
+;Manufacturer节指明供应商及其对应Models接的名称
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+
+;String节指明一些列字符串
+[Strings]
+ManufacturerName=""
+ClassName=""
+DiskName="FirstDriver Source Disk"
